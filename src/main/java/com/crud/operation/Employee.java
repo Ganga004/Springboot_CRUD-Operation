@@ -17,7 +17,16 @@ public class Employee {
 	String name;
 	String role;
 	double salary;
+	String dept;
 	
+	public String getDept() {
+		return dept;
+	}
+
+	public void setDept(String dept) {
+		this.dept = dept;
+	}
+
 	public Employee() {
 		super();
 	}
