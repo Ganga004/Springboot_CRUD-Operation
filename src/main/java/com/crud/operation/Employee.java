@@ -17,14 +17,14 @@ public class Employee {
 	String name;
 	String role;
 	double salary;
-	String dept;
+	int  dept_id;
 	
-	public String getDept() {
-		return dept;
+	public int getDept_id() {
+		return dept_id;
 	}
 
-	public void setDept(String dept) {
-		this.dept = dept;
+	public void setDept_id(int dept_id) {
+		this.dept_id = dept_id;
 	}
 
 	public Employee() {

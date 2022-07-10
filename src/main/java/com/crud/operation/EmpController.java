@@ -10,17 +10,25 @@ import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.PutMapping;
 import org.springframework.web.bind.annotation.RequestBody;
+import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.client.RestTemplate;
 
 @RestController
+@RequestMapping("/crud")
+
 public class EmpController {
 	
 	@Autowired
 	private EmpService service;
 	
+	@Autowired
+	RestTemplate resttemplate;
+
 	@GetMapping("/hi")
 	public String hello()
 	{
+		
 		return "welcome";
 	}
 	
@@ -49,10 +57,10 @@ public class EmpController {
 		return service.getAllData();
 	}
 	
-	@PutMapping("/updateDetails")
-	public Employee upateEmployeeData(@RequestBody Employee emp)
+	@PutMapping("/updateDetails/{id}")
+	public Employee upateEmployeeData(@PathVariable int id,@RequestBody Employee emp)
 	{
-		return service.updateEmpDetail(emp);
+		return service.updateEmpDetail(id,emp);
 	}
 	
 	@DeleteMapping("/delete/{id}")

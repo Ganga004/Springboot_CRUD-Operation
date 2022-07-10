@@ -31,8 +31,8 @@ public class EmpService {
 		return emprepo.findAll();
 		
 	}	
-	public Employee updateEmpDetail(Employee empl) {
-		Optional<Employee> optionalEmp=emprepo.findById(empl.empId);
+	public Employee updateEmpDetail(int id,Employee empl) {
+		Optional<Employee> optionalEmp=emprepo.findById(id);
 		Employee oldData=optionalEmp.get();
 		if(optionalEmp.isPresent())
 		{
